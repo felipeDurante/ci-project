@@ -24,6 +24,6 @@ jobs:
     - name: Build and push
       id: docker_build
       uses: docker/build-push-action@v4
-        with:
-          push: false
-          tags: 0biwanken0bi/ci-teste:latest
+      with:
+        push: false
+        tags: 0biwanken0bi/ci-teste:latest
