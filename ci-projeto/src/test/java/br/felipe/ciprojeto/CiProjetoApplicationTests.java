@@ -11,6 +11,7 @@ class CiProjetoApplicationTests {
 	@Test
 	void contextLoads() {
 		assertEquals(4,4);  
+		System.out.println("é isso parca");
 	}
 
 }
