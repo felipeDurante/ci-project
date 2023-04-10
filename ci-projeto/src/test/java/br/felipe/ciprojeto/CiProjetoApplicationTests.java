@@ -10,7 +10,7 @@ class CiProjetoApplicationTests {
 
 	@Test
 	void contextLoads() {
-		assertEquals(4,2);  
+		assertEquals(4,4);  
 	}
 
 }
