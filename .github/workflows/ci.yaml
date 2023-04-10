@@ -11,4 +11,5 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Build with Maven
-      run: ./ci-projeto/mvn --batch-mode --update-snapshots package
+      run : cd ci-projeto
+      run: mvn --batch-mode --update-snapshots package
