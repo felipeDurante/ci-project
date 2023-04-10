@@ -7,23 +7,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 11
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-    - name: Build with Maven
-      run: | 
-        cd ci-projeto
-        mvn --batch-mode --update-snapshots package
-    - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
-    - name: Build and push
-      id: docker_build
-      uses: docker/build-push-action@v4
-      with:
-        push: false
-        tags: 0biwanken0bi/ci-teste:latest
+      - uses: actions/checkout@v3
+      
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      
+      - name: Build with Maven
+        run: | 
+          cd ci-projeto
+          mvn --batch-mode --update-snapshots package
+      
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: false
+          tags: 0biwanken0bi/ci-teste:latest
