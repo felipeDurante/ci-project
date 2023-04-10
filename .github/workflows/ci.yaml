@@ -17,3 +17,13 @@ jobs:
       run: | 
         cd ci-projeto
         mvn --batch-mode --update-snapshots package
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    - name: Build and push
+      id: docker_build
+      uses: docker/build-push-action@v4
+        with:
+          push: false
+          tags: 0biwanken0bi/ci-teste:latest
